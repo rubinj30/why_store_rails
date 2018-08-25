@@ -3,8 +3,18 @@ class Api::ProductsController < ApplicationController
 
   # GET /products
   def index
-      @products = Product.all
-      render json: @products
+      if params[:brand_id]
+        puts "BRAND PRODUCT"
+        @brand_products = Brand.find(params[:brand_id]).products
+        render json: @brand_products
+      elsif params[:category_id]
+        puts "CATEGORY PRODUCT"
+        @cat_products = Category.find(params[:category_id]).products
+        render json: @cat_products
+      else
+        @products = Product.all
+        render json: @products
+      end
   end
 
   def brand_subindex
