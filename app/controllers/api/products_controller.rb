@@ -16,12 +16,7 @@ class Api::ProductsController < ApplicationController
         render json: @products
       end
   end
-
-  def brand_subindex
-    @brand_products = Brand.find(params[:brand_id]).products
-    render json: @brand_products
-  end
-
+  
   # GET /products/1
   def show
     render json: @product
@@ -50,6 +45,7 @@ class Api::ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     @product.destroy
+    render json: @product
   end
 
   private
