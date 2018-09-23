@@ -1,12 +1,14 @@
 import React from 'react';
-import { HeaderDiv, Title, MyAccountContainer } from './styled';
+import { HeaderDiv, InnerHeader, Title, MyAccountContainer } from './styled';
 
 export const Header = () => (
     <HeaderDiv>
-        <Title>why buy</Title>
-        <MyAccountContainer>
-            <div>log in</div>
-            <div>register</div>
-        </MyAccountContainer>
+        <InnerHeader>
+            <Title>why buy</Title>
+            <MyAccountContainer>
+                <div>log in</div>
+                <div>register</div>
+            </MyAccountContainer>
+        </InnerHeader>
     </HeaderDiv>
 );
