@@ -1,5 +1,3 @@
-
-import "./App.css";
 import { Header } from "./components/molecules/header/header";
 import { SideNav } from "./components/molecules/side-nav/side-nav";
 import * as React from "react";

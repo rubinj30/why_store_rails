@@ -4,9 +4,12 @@
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "*.json"
     ]
   },
-  "ordered-imports": false,
-  "grouped-imports": false
+  "rules": {
+    "indent": [true, "spaces", 4],
+    "ordered-imports": [ true, { "import-sources-order": "any", "named-imports-order": "any"}]
+  }
 }
