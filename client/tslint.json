@@ -10,6 +10,7 @@
   },
   "rules": {
     "indent": [true, "spaces", 4],
-    "ordered-imports": [ true, { "import-sources-order": "any", "named-imports-order": "any"}]
+    "ordered-imports": [ true, { "import-sources-order": "any", "named-imports-order": "any"}],
+    "no-console": false
   }
 }
