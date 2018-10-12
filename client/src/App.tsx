@@ -5,8 +5,6 @@ import * as React from "react";
 // TODO:
 // 2. decide on css library
 // 3. setup jest and make sure tests work
-// 4. make sure client and server runs concurrently
-//   "ordered-imports": false, "grouped-imports": false
 interface IStateInterface {
   isLoggedIn: boolean;
 }
@@ -14,14 +12,11 @@ interface IStateInterface {
 // TODO: seems like it needs both Props and State interface, b
 class App extends React.Component<{}, IStateInterface> {
 
-  // TODO: error said the state had to be protected, private, or public. WHY?
-  public state = {
+  state = {
     isLoggedIn: false
   };
 
-  // TODO: why is it public?
-  // TODO: look up member
-  public render() {
+  render() {
     return (
       <div className="App">
         <Header isLoggedIn={this.state.isLoggedIn} />

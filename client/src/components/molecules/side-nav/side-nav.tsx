@@ -15,23 +15,34 @@ interface IBrandInterface {
   updated_at: string;
 }
 
-export class SideNav extends React.Component<{}, IStateInterface> {
-  public state = { brands: [] };
+interface ISideNavSection {
+  name: string;
+  key: number;
+}
 
-  public componentDidMount() {
+const SideNavSection = ({ name }: ISideNavSection) => (
+  <>
+    <div>{name}</div>
+  </>
+);
+
+export class SideNav extends React.Component<{}, IStateInterface> {
+  state = { brands: [] };
+
+  componentDidMount() {
     this.getBrands();
   }
 
-  public getBrands = async () => {
+  getBrands = async () => {
     const { data } = await axios.get("/api/brands");
     this.setState({ brands: data });
   };
 
-  public render() {
+  render() {
     const { brands } = this.state;
-    const brandsList = brands.map((brand: IBrandInterface, i) => (
-      <div key={i}>{brand.name}</div>
-    ));
+    const brandsList = brands.map((b: IBrandInterface, i) => {
+      return <SideNavSection key={i} name={b.name} />;
+    });
     return <SideNavDiv>{brandsList}</SideNavDiv>;
   }
 }
