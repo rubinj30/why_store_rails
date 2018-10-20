@@ -8,9 +8,9 @@ export const HeaderDiv = styled.div`
         background: #272727;
         position: fixed;
         position: fixed;
-        top: 0;
         display: flex;
         justify-content: center;
+        top: 0;
     }
     `;
     
@@ -34,7 +34,6 @@ export const Title = styled.div`
 
 export const MyAccountContainer = styled.div`
      {
-        width: 7.5rem;
         display: flex;
         justify-content: space-between;
     }

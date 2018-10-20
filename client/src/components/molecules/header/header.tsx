@@ -1,23 +1,14 @@
 import * as React from "react";
+import { MyAccount } from "../my-account/my-account";
 
 // TODO: add styles from client2 to client
-import { HeaderDiv, InnerHeader, Title, MyAccountContainer } from "./styled";
-
+import { HeaderDiv, InnerHeader, Title } from "./styled";
 
 export const Header = ({ isLoggedIn }: { isLoggedIn: boolean }) => (
   <HeaderDiv>
     <InnerHeader>
       <Title>why buy</Title>
-      <MyAccountContainer>
-        {isLoggedIn ? (
-          <div>my account</div>
-        ) : (
-          <>
-            <div>log in</div>
-            <div>register</div>
-          </>
-        )}
-      </MyAccountContainer>
+      <MyAccount isLoggedIn={isLoggedIn} />
     </InnerHeader>
   </HeaderDiv>
 );

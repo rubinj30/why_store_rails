@@ -43,6 +43,11 @@ export class SideNav extends React.Component<{}, IStateInterface> {
     const brandsList = brands.map((b: IBrandInterface, i) => {
       return <SideNavSection key={i} name={b.name} />;
     });
-    return <SideNavDiv>{brandsList}</SideNavDiv>;
+    return (
+      <SideNavDiv>
+        {brandsList}
+        {brandsList}
+      </SideNavDiv>
+    );
   }
 }
