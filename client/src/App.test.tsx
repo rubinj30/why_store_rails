@@ -1,14 +1,10 @@
-jest.unmock("./App.tsx");
-
 import * as React from "react";
-import App from "./App";
-import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { App } from "./App";
 
-Enzyme.configure({ adapter: new Adapter() });
+import { shallow } from "enzyme";
 
 describe("App", () => {
-  it("should render properly", () => {
+  it("renders properly", () => {
     const result = shallow(<App />);
     expect(result).toBeDefined();
     expect(result).toMatchSnapshot();

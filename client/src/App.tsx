@@ -10,11 +10,13 @@ interface IStateInterface {
 }
 
 // TODO: seems like it needs both Props and State interface, b
-class App extends React.Component<{}, IStateInterface> {
+export class App extends React.Component<{}, IStateInterface> {
 
   state = {
     isLoggedIn: false
   };
+
+  testJest = () => ('test');
 
   render() {
     return (
@@ -22,11 +24,8 @@ class App extends React.Component<{}, IStateInterface> {
         <Header isLoggedIn={this.state.isLoggedIn} />
         <div className="mainPage">
           <SideNav />
-          <div>Rest of Page</div>
         </div>
       </div>
     );
   }
 }
-
-export default App;
